@@ -1,8 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
-import './FeatureMovie.css';
+import './style.css';
 
-export default ({ item }) => {
+const FeatureMovie = ({ item }) => {
   console.log(item);
 
   let firsteDate = new Date(item.first_air_date);
@@ -43,3 +43,5 @@ export default ({ item }) => {
     </section>
   )
 }
+
+export default FeatureMovie;
