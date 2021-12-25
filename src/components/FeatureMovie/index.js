@@ -7,12 +7,17 @@ const FeatureMovie = ({ item }) => {
   let firsteDate = new Date(item.first_air_date);
   let genres = [];
 
-  // Pesquisar como limitar uma string
-  let limitedDescription = item.overview;
-
+  
   for(let i in item.genres) {
     genres.push(item.genres[i].name)
   }
+  
+  // Pesquisar como limitar uma string
+  let description = item.overview;
+  if(description.length > 200) {
+    description = description.substring(0, 200) + "...";
+  }
+
 
   return (
     <section className="featured" style={{
@@ -31,7 +36,7 @@ const FeatureMovie = ({ item }) => {
               {item.number_of_seasons !== 1 ? 's': ''}
             </div>
             <div className="featured--description">
-              {item.overview}
+              {description}
             </div>
             <div className="featured--buttons">
               <a href={`/watch/${item.id}`} className="featured--watchbutton">Assistir</a>
