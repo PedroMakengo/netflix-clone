@@ -3,10 +3,13 @@ import React from 'react';
 import './style.css';
 
 const FeatureMovie = ({ item }) => {
-  console.log(item);
 
   let firsteDate = new Date(item.first_air_date);
   let genres = [];
+
+  // Pesquisar como limitar uma string
+  let limitedDescription = item.overview;
+
   for(let i in item.genres) {
     genres.push(item.genres[i].name)
   }
