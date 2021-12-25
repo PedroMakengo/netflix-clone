@@ -18,7 +18,6 @@ const FeatureMovie = ({ item }) => {
     description = description.substring(0, 200) + "...";
   }
 
-
   return (
     <section className="featured" style={{
       backgroundSize: 'cover',

@@ -63,7 +63,8 @@ export default () => {
 
 
      <footer>
-       Feito com <span role="img" aria-label="coração">💖</span> pela B7Web <br />
+       Feito com <span role="img" aria-label="coração">💖</span> pelo 
+       <a href="https://github.com/PedroMakengo">Pedro Makengo</a> <br />
        Direitos de imagem para Netflix <br />
        Dados pegos do site Themoviedb.org
      </footer>
