@@ -52,12 +52,12 @@
   left: 0;
 }
 
-.movieRow--left {
+.movieRow--right {
   right: 0;
 }
 
-.movierow:hover .movieRow--left,
-.movierow:hover .movieRow--right {
+.movieRow:hover .movieRow--left,
+.movieRow:hover .movieRow--right {
   opacity: 1;
 }
 

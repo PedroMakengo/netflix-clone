@@ -10,7 +10,7 @@ export default () => {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
-  const [blackHeader, setBlackHeader] = false;
+  const [blackHeader, setBlackHeader] = useState(false);
 
   // Pesquisar e procurar entender o useEffect
   useEffect(() => {
@@ -64,7 +64,8 @@ export default () => {
 
      <footer>
        Feito com <span role="img" aria-label="coração">💖</span> pelo 
-       <a href="https://github.com/PedroMakengo">Pedro Makengo</a> <br />
+       <a href="https://github.com/PedroMakengo" 
+        style={{color: '#fff', fontWeight: 'bold'}}> Pedro Makengo</a> <br />
        Direitos de imagem para Netflix <br />
        Dados pegos do site Themoviedb.org
      </footer>
@@ -73,7 +74,7 @@ export default () => {
 
      {movieList.length <= 0 &&
        <div className="loading">
-         <img src="https://www.filmelier.com/pt/br/news/wp-content/uploads/2020/03/netflix-loading.gif" alt="Carregando" />
+         <img src="https://media.wired.com/photos/592744d3f3e2356fd800bf00/master/w_2560%2Cc_limit/Netflix_LoadTime.gif" alt="Carregando" />
        </div>
       }
     </div>

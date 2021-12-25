@@ -2,22 +2,23 @@
 import React, { useState } from 'react';
 import './style.css';
 
-// import NavigateBeforeIcon from '@material-ui/icons/NavigateBeforeIcon';
-// import NavigateNextIcon from '@material-ui/icons/NavigateNextIcon';
+import { NavigateBefore } from '@material-ui/icons';
+import { NavigateNext } from '@material-ui/icons/';
 
 const MovieRow = ({title, items}) => {
 
   const [scrollX, setScrollX] = useState(0)
 
   const handleLeftArrow = () => {
-    let x = scrollX + Math.random(window.innerWidth / 2);
+    let x = scrollX + Math.round(window.innerWidth / 2);
     if(x > 0) {
       x = 0;
     }
     setScrollX(x);
   }
+
   const handleRightArrow = () => {
-    let x = scrollX - Math.random(window.innerWidth / 2);
+    let x = scrollX - Math.round(window.innerWidth / 2);
 
     // Largura dos meus items
     let listW = items.results.length * 150;
@@ -33,10 +34,10 @@ const MovieRow = ({title, items}) => {
       <h2>{title}</h2>
 
       <div className="movieRow--left" onClick={handleLeftArrow}>
-        {/* <NavigateBeforeIcon style={{fontSize: 50}} /> */}
+        <NavigateBefore style={{fontSize: 50}} />
       </div>
-      <div className="moviewRow--right" onClick={handleRightArrow}>
-        {/* <NavigateNextIcon style={{fontSize: 50}} /> */}
+      <div className="movieRow--right" onClick={handleRightArrow}>
+        <NavigateNext style={{fontSize: 50}} />
       </div>
       <div className="movieRow--listarea">
         <div className="movieRow--list" 
