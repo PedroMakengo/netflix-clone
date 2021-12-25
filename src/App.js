@@ -10,6 +10,7 @@ export default () => {
 
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = false;
 
   // Pesquisar e procurar entender o useEffect
   useEffect(() => {
@@ -30,9 +31,25 @@ export default () => {
     loadAll();
   }, [])
 
+  // Adicionando um evento de monitoramento da página 
+  useEffect(() => {
+    const scrollListener = () => {
+      if(window.scrollY > 10) {
+        setBlackHeader(true)
+      }else {
+        setBlackHeader(false)
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('scroll', scrollListener)
+    }
+  }, [])
+
   return (
     <div className="page">
-      <Header />
+      <Header black={blackHeader} />
 
      {featuredData && 
       <FeatureMovie item={featuredData} />
